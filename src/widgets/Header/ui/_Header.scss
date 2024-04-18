@@ -16,6 +16,16 @@
     &:visited,
     &:link {
       font-size: $default-font-size;
+      color: $color-primary;
+      padding: 0.8rem 1rem;
+      transition: all 400ms ease;
+    }
+
+    &:hover {
+      background: $color-primary;
+      color: $color-white;
+      box-shadow: 0 1rem 4rem rgba($color: $color-black, $alpha: 0.1);
+      transform: translateY(3px);
     }
   }
 }
