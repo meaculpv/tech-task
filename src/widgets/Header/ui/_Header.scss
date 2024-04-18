@@ -1,0 +1,21 @@
+.navigation {
+  &__nav {
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    &:visited,
+    &:link {
+      font-size: $default-font-size;
+    }
+  }
+}
