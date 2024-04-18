@@ -14,3 +14,8 @@ body {
   box-sizing: border-box;
   padding: 4rem;
 }
+
+*::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

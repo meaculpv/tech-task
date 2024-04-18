@@ -6,6 +6,26 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: $color-black;
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: $color-black;
+  }
+}
+
+.heading-primary {
+  font-size: 3rem;
+  color: transparent;
+  text-transform: uppercase;
+  background: linear-gradient(
+    to right bottom,
+    rgba($color: $color-primary-light, $alpha: 1),
+    rgba($color: $color-primary-dark, $alpha: 1)
+  );
+  background-clip: text;
+  transition: all 400ms ease;
+
+  &:hover {
+    transform: skewX(12deg) skewY(4deg);
+  }
 }

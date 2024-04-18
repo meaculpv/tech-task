@@ -1,0 +1,131 @@
+.tasks {
+  margin-top: 4rem;
+}
+
+.section-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.task {
+  &__form {
+    position: relative;
+  }
+
+  &__label {
+    font-size: $default-font-size;
+    color: $color-primary;
+    position: absolute;
+    padding: 1rem 2rem;
+    left: 0.4rem;
+    transition: all 400ms ease;
+  }
+
+  &__input {
+    height: 5rem;
+    outline: none;
+    font-family: inherit;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+
+    font-size: $default-font-size;
+  }
+
+  &__line {
+    height: 4px;
+    width: 65%;
+    background: $color-primary;
+    position: absolute;
+    top: 5rem;
+
+    // transform: scale(0);
+    transition: all 400ms ease;
+  }
+
+  &__input:focus ~ &__label {
+    transform: translate(-2rem, -3.4rem);
+  }
+  &__input:focus ~ &__line {
+    transform: scale(1);
+    background: $color-primary-dark;
+  }
+}
+
+.btn {
+  height: 5rem;
+  padding: 1rem 2rem;
+  background: $color-primary;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+
+  font-family: inherit;
+  text-transform: uppercase;
+  color: $color-white;
+
+  transition: transform 200ms ease;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 0.5rem 4rem rgba($color: $color-black, $alpha: 0.1);
+  }
+
+  &--green {
+    margin-left: 1rem;
+  }
+}
+
+.section-tasks {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  gap: 6rem;
+  margin: 0 auto;
+  margin-top: 8rem;
+}
+
+.todo {
+  max-width: 40rem;
+  max-height: 40rem;
+  box-shadow: 0 1rem 4rem rgba($color: $color-black, $alpha: 0.1);
+  padding: 1rem;
+  border-radius: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &__tag {
+    width: fit-content;
+    background: rgba($color: $color-primary, $alpha: 1);
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+
+    font-size: $default-font-size;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $default-font-size;
+  }
+  &__action {
+    cursor: pointer;
+
+    &--edit {
+    }
+    &--delete {
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__actions {
+    display: flex;
+    gap: 2rem;
+  }
+}
