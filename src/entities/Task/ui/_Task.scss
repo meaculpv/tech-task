@@ -1,0 +1,48 @@
+.todo {
+  max-height: 40rem;
+  min-width: 40rem;
+  box-shadow: 0 1rem 4rem rgba($color: $color-black, $alpha: 0.1);
+  padding: 1rem;
+  border-radius: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &__tag {
+    width: fit-content;
+    background: rgba($color: $color-primary, $alpha: 1);
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+
+    font-size: $default-font-size;
+    color: $color-white;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+  }
+
+  &__date {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  &__action {
+    cursor: pointer;
+
+    &--edit {
+    }
+    &--delete {
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__actions {
+    display: flex;
+    gap: 2rem;
+  }
+}

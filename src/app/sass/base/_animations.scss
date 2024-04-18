@@ -1,0 +1,21 @@
+.cavein-enter-to {
+  transform: scale(1);
+  opacity: 1;
+}
+.cavein-enter-from {
+  transform: scale(0);
+  opacity: 0;
+}
+.cavein-leave-from {
+  transform: scale(1);
+  opacity: 1;
+}
+.cavein-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.cavein-leave-active,
+.cavein-enter-active {
+  transition: all 500ms ease;
+}
