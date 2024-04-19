@@ -29,3 +29,12 @@
     }
   }
 }
+
+.router-link-active,
+.router-link-exact-active {
+  &:visited,
+  &:link {
+    color: $color-white;
+    background-color: $color-primary;
+  }
+}

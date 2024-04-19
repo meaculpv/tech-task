@@ -5,6 +5,7 @@ import { computed, ref } from 'vue';
 export const useTasksStore = defineStore('tasks', () => {
   // States
   const tasks = ref<Task[]>([]);
+  const task = ref<Task>();
 
   // Getters
   const todayTasks = computed(() => {
@@ -41,7 +42,6 @@ export const useTasksStore = defineStore('tasks', () => {
 
   function updateTask(updatedTask: Task) {
     const taskIndex = tasks.value.findIndex((t) => t.id === updatedTask.id);
-    console.log(taskIndex);
 
     if (taskIndex !== -1) {
       tasks.value[taskIndex] = updatedTask;
@@ -49,13 +49,19 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
+  function getTaskById(id: string) {
+    task.value = tasks.value.find((task) => task.id === id);
+  }
+
   return {
     tasks,
+    task,
     todayTasks,
     nextWeekTasks,
     addTask,
     getTasks,
     removeTask,
     updateTask,
+    getTaskById,
   };
 });
