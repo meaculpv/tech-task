@@ -1,0 +1,42 @@
+.home {
+  margin-top: 6rem;
+}
+
+.section-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  place-items: center;
+  gap: 4rem;
+}
+
+.today-tasks {
+  &__list {
+    margin-top: 2rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__item {
+    font-size: $default-font-size;
+  }
+}
+.nextWeek-tasks {
+  &__list {
+    margin-top: 2rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__item {
+    font-size: $default-font-size;
+  }
+}
+
+@media (max-width: 470px) {
+  .section-group {
+    grid-template-columns: 1fr;
+  }
+}

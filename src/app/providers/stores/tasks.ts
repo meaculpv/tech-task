@@ -1,5 +1,4 @@
 import type { Task } from '@/shared/types/Task';
-import moment from 'moment';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
@@ -9,11 +8,11 @@ export const useTasksStore = defineStore('tasks', () => {
 
   // Getters
   const todayTasks = computed(() => {
-    tasks.value.find((task) => task.tag === 'Today');
+    return tasks.value.filter((task) => task.tag === 'Today');
   });
 
   const nextWeekTasks = computed(() => {
-    tasks.value.find((task) => (task.tag = 'Next week'));
+    return tasks.value.filter((task) => task.tag === 'Next week');
   });
 
   // Actions
