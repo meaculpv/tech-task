@@ -19,6 +19,7 @@
     color: $color-primary;
     position: absolute;
     padding: 1rem 2rem;
+    top: 0.5rem;
     left: 0.4rem;
     transition: all 400ms ease;
   }
@@ -47,7 +48,7 @@
   }
 
   &__input:focus ~ &__label {
-    transform: translate(-2rem, -3.4rem);
+    transform: translate(-2rem, -4rem);
   }
   &__input:focus ~ &__line {
     transform: scale(1);

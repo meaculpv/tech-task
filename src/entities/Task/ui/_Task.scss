@@ -46,3 +46,118 @@
     gap: 2rem;
   }
 }
+
+.task {
+  &__input {
+    &--modal {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    &--modal {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  &__label {
+    &--modal {
+      top: 0;
+      left: 6rem;
+    }
+  }
+
+  &__line {
+    &--modal {
+      width: 60%;
+      top: 7rem;
+    }
+  }
+
+  &__radio {
+    margin-top: 2rem;
+    display: flex;
+    gap: 4rem;
+    input {
+      display: none;
+    }
+
+    &__label {
+      font-size: 1.8rem;
+      color: $color-white;
+      padding: 1rem 2rem;
+      border-radius: 10rem;
+      cursor: pointer;
+
+      transition: all 200ms ease;
+      &--1 {
+        background-color: $color-primary;
+      }
+      &--2 {
+        background-color: $color-secondary;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+
+    input:checked + &__label {
+      background-color: $color-primary-light;
+    }
+  }
+
+  &__input:focus ~ &__line--modal {
+    background-color: $color-secondary;
+  }
+}
+
+.btn {
+  &--modal {
+    margin-top: 2rem;
+  }
+}
+
+.modal-edit {
+  background-color: $color-white;
+  display: block;
+  width: 40rem;
+  height: 40rem;
+  padding: 4rem 2rem;
+  box-shadow: 0 1rem 4rem rgba($color: $color-black, $alpha: 0.2);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 10;
+  &__header {
+    position: relative;
+  }
+
+  &__xmark {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+}
+
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: $color-black, $alpha: 0.2);
+
+  height: 100vh;
+  width: 100vw;
+
+  z-index: 1;
+}

@@ -1,11 +1,22 @@
 import type { Task } from '@/shared/types/Task';
 import moment from 'moment';
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export const useTasksStore = defineStore('tasks', () => {
+  // States
   const tasks = ref<Task[]>([]);
 
+  // Getters
+  const todayTasks = computed(() => {
+    tasks.value.find((task) => task.tag === 'Today');
+  });
+
+  const nextWeekTasks = computed(() => {
+    tasks.value.find((task) => (task.tag = 'Next week'));
+  });
+
+  // Actions
   function getTasks() {
     const tasksJson = localStorage.getItem('tasks');
 
@@ -29,10 +40,20 @@ export const useTasksStore = defineStore('tasks', () => {
     tasks.value = filteredTasks;
   }
 
-  function updateTask(updatedTask: Task) {}
+  function updateTask(updatedTask: Task) {
+    const taskIndex = tasks.value.findIndex((t) => t.id === updatedTask.id);
+    console.log(taskIndex);
+
+    if (taskIndex !== -1) {
+      tasks.value[taskIndex] = updatedTask;
+      localStorage.setItem('tasks', JSON.stringify(tasks.value));
+    }
+  }
 
   return {
     tasks,
+    todayTasks,
+    nextWeekTasks,
     addTask,
     getTasks,
     removeTask,
